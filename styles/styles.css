@@ -504,6 +504,7 @@ footer{
 }
 footer p{
 
+    text-align: center;
     color:  var(--highlight-color);
 
 }
