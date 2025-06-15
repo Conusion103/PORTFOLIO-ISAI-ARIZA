@@ -1,0 +1,523 @@
+/*===============================
+=        Root Variables        =
+===============================*/
+:root {
+    --primary-color: #0e1117; /* Main dark background color, elegant */
+    --secondary-color: #161b22; /* Section background color */
+    --accent-color: #3fbdf1; /* Eye-catching accent color */
+    --highlight-color: #a5d6ff; /* Light highlight color on dark background */
+    --button-color: #238636; /* Bright green for buttons (GitHub style) */
+    --text-color: #f0f6fc; /* Light text color for good readability */
+    --gray: #8b949e; /* Soft gray for details */
+}
+
+
+/*===============================
+=         Universal Reset      =
+===============================*/
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*===============================
+=           Animations         =
+===============================*/
+
+/* Animation for moving elements left and right */
+@keyframes move {
+
+    20%,60%{
+        transform: translateX(1em);
+    }
+
+    40%,80%{
+        transform: translateX(-1em);
+    }
+    
+    100%{
+
+        transform: translateX(0);
+
+    }
+}
+
+/* Animation for a vertical bounce effect */
+@keyframes bounde {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0); 
+    }
+    40% {
+        transform: translateY(-30px); 
+    }
+    60% {
+        transform: translateY(-15px); 
+    }
+}
+
+/* Animation for sliding projects horizontally */
+@keyframes slide {
+  0%   { transform: translateX(0%); }
+  30%  { transform: translateX(0%); }
+
+  33.333%  { transform: translateX(-33.333%); }
+  63%  { transform: translateX(-33.333%); }
+
+  66.666%  { transform: translateX(-66.666%); }
+  96.666%  { transform: translateX(-66.666%); }
+  100%  { transform: translateX(0%); }
+
+}
+
+/*===============================
+=             Body             =
+===============================*/
+body {
+    width: 100%;
+    background-color: var(--primary-color);
+    font-size: 16px;
+    
+}
+
+/*===============================
+=           Header             =
+===============================*/
+header {
+
+    width: 100%;
+    background-color:transparent;
+    top: 0;
+    position: fixed;
+    z-index: 2;
+}
+
+header nav {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+
+}
+
+/*===============================
+=           Main Section       =
+===============================*/
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/*===============================
+=       Navigation - Section 1  =
+===============================*/
+#section1_nav {
+
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 0 20px;
+
+}
+
+nav #section1_nav h1 {
+
+    color: var(--text-color);
+    font-size: 1.5em;
+    animation: bounde 2s infinite forwards;
+}
+
+/*===============================
+=       Navigation - Section 2  =
+===============================*/
+#section2_nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px 0 0;
+}
+
+#section2_nav a {
+
+    text-decoration: none;
+    font-size: 1em;
+    margin: .7em;
+    color: var(--text-color);
+    white-space: nowrap;
+}
+
+#section1_nav h1:hover,
+#section2_nav a:hover {
+
+    color: var(--accent-color);
+    font-size: 1.6em;
+    transition: .4s;
+
+}
+
+#section2_nav a:hover {
+
+    font-size: 1.1em;
+    transition: .4s;
+
+
+}
+
+/*===============================
+=        About Me Section      =
+===============================*/
+#ABOUT_ME{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(1,1fr);
+    margin-top: 10em;
+    width: 19.1em;
+    row-gap: 2em;
+    padding: 0 2em;
+    background-color:transparent;
+    box-shadow: -1px 2px 15px rgb(63, 189, 241,.25);
+    border-radius: 24px;
+    transition: 5s;
+    animation: move 10s infinite ease-in-out;
+
+}
+
+#ABOUT_ME:hover{
+
+    transform: translateY(-2em)
+}
+
+
+#profile-photo-container{
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 2em;
+
+}
+
+#profile-photo-container #profile_photo{
+
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+
+}
+
+#container_information{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: rgb(183, 235, 235);
+}
+
+#container_information p{
+
+    text-align: justify;
+}
+
+#name{
+
+    color: rgb(67, 194, 194);
+    
+}
+#icons_social_networks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2em;
+}
+
+
+#container_information a svg{
+
+    color: rgb(67, 194, 194);
+    width: 3em ;
+    margin: 2em 0 2em 0;
+    height: 3em;
+    animation: bounde 2s infinite forwards;
+
+}
+
+/*===============================
+=       Projects Section       =
+===============================*/
+#PROJECTS{
+    width: 19em;
+    height: 25em;
+    margin: 3em;
+    box-shadow: -1px 2px 15px rgb(63, 189, 241,.25);
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+#PROJECTS #target{
+
+    width: 300%;
+    height: 100%;
+    display: flex;
+    animation: slide 20s ease-in-out infinite;
+    
+
+}
+
+/* Project 1 */
+#target #project_1 {
+
+    width: 19em;
+    height: 25em;
+    margin-left: 33.333%;
+
+    
+
+}
+#target #project_1 a{
+
+    text-decoration: none;
+
+}
+
+#target #project_1 a h2{
+
+    margin: 1em 0 0 0;
+    color:rgb(67, 194, 194);
+
+}
+
+#target #project_1{
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 24px;
+    width: 100%;
+    height: 100%;
+
+}
+
+#target #project_1 img{
+
+    width: 15em ;
+    height: auto;
+
+}
+#target #project_1 #description_p1 {
+    
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#target #project_1 #description_p1 p{
+    width: 19em;
+    height: 100%;
+    text-align: justify;
+    margin: 0 10% 2em 10%;
+    color: rgb(183, 235, 235);
+    
+
+
+}
+
+/* Project 2 */
+#target #project_2 a{
+
+    text-decoration: none;
+
+}
+
+#target #project_2 a h2{
+
+    margin: 1em 0 0 0;
+    color:rgb(67, 194, 194);
+
+}
+
+#target #project_2{
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 24px;
+    width: 100%;
+    height: 100%;
+
+}
+
+#target #project_2 img{
+
+    width: 8em ;
+    height: 10em;
+
+}
+#target #project_2 #description_p2 {
+    
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#target #project_2 #description_p2 p{
+    width: 19em;
+    height: 100%;
+    text-align: justify;
+    margin: 0 10% 2em 10%;
+    color: rgb(183, 235, 235);
+    
+
+
+}
+
+/* Project 3 */
+#target #project_3 a{
+
+    text-decoration: none;
+
+}
+
+#target #project_3 a h2{
+
+    margin: 1em 0 0 0;
+    color:rgb(67, 194, 194);
+
+}
+#target #project_3 img{
+
+    width: 13em ;
+    height: 10em;
+    border-radius: 10px;
+
+}
+
+#target #project_3{
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 24px;
+    width: 100%;
+    height: 100%;
+
+}
+
+#target #project_3 #description_p3 {
+    
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#target #project_3 #description_p3 p{
+    width: 19em;
+    height: 100%;
+    text-align: justify;
+    margin: 0 10% 2em 10%;
+    color: rgb(183, 235, 235);
+    
+
+
+}
+
+/* Contact Form */
+.formulario_contacto {
+  width: 19em;
+  padding: 40px;
+  background-color: transparent;
+  border-radius: 12px;
+  margin-bottom: 2%;
+  box-shadow: 0 0 15px rgba(0, 221, 255, 0.2);
+}
+
+
+#titulo_formulario {
+  font-size: 2rem;
+  color: rgb(67, 194, 194);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form_contacto {
+  display: flex;
+  flex-direction: column;
+}
+
+.form_contacto label {
+  color: rgb(183, 235, 235);
+  margin-bottom: 8px;
+}
+
+.form_contacto input,
+.form_contacto textarea {
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.form_contacto button {
+  padding: 12px 20px;
+  border-radius: 24px;
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  border: 1px solid var(--highlight-color);
+
+}
+
+/* footer */
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    padding: 1em;
+    width: 100%;
+}
+footer p{
+
+    color:  var(--highlight-color);
+
+}
+
+/* media query 1500px */
+@media (max-width: 1500px){
+
+    header {
+
+    background-color: var(--primary-color);
+
+}
+}
+
+
+
+
